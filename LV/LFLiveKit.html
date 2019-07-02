@@ -1,0 +1,810 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.2 LFLiveKit推流 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="IJKPlayer.html" />
+    
+    
+    <link rel="prev" href="rtmp.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../iOS/">
+            
+                <a href="../iOS/">
+            
+                    
+                    1. iOS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../iOS/StringToCalss.html">
+            
+                <a href="../iOS/StringToCalss.html">
+            
+                    
+                    1.1 字符串转类名Class
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../iOS/StringContentZh.html">
+            
+                <a href="../iOS/StringContentZh.html">
+            
+                    
+                    1.2 判断字符串中是否含有中文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../iOS/Responder.html">
+            
+                <a href="../iOS/Responder.html">
+            
+                    
+                    1.3 Responder响应者链
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../iOS/Method.html">
+            
+                <a href="../iOS/Method.html">
+            
+                    
+                    1.4 常用的方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    2. LiveVideo
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="rtmp.html">
+            
+                <a href="rtmp.html">
+            
+                    
+                    1.1  创建本地rtmp服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="LFLiveKit.html">
+            
+                <a href="LFLiveKit.html">
+            
+                    
+                    1.2 LFLiveKit推流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="IJKPlayer.html">
+            
+                <a href="IJKPlayer.html">
+            
+                    
+                    1.3 IJKPlayer拉流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="BUG.html">
+            
+                <a href="BUG.html">
+            
+                    
+                    BUG
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1.2 LFLiveKit推流</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="12-lflivekit&#x63A8;&#x6D41;">1.2 LFLiveKit&#x63A8;&#x6D41;</h1>
+<blockquote>
+<p>LFLiveKit&#xFF1A;&#x6846;&#x67B6;&#x652F;&#x6301;RTMP&#xFF0C;&#x7531;Adobe&#x516C;&#x53F8;&#x5F00;&#x53D1;&#x3002;github&#x5730;&#x5740;<a href="https://github.com/LaiFengiOS/LFLiveKit" target="_blank">https://github.com/LaiFengiOS/LFLiveKit</a></p>
+</blockquote>
+<p>LFLiveKit&#x5E93;&#x91CC;&#x5DF2;&#x7ECF;&#x96C6;&#x6210;GPUImage&#x6846;&#x67B6;&#x7528;&#x4E8E;&#x7F8E;&#x989C;&#x529F;&#x80FD;&#xFF0C;GPUImage&#x57FA;&#x4E8E;OpenGl&#x5F00;&#x53D1;&#xFF0C;&#x7EAF;OC&#x8BED;&#x8A00;&#x6846;&#x67B6;&#xFF0C;&#x5C01;&#x88C5;&#x597D;&#x4E86;&#x5404;&#x79CD;&#x6EE4;&#x955C;&#x540C;&#x65F6;&#x4E5F;&#x53EF;&#x4EE5;&#x7F16;&#x5199;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6EE4;&#x955C;&#xFF0C;&#x5176;&#x672C;&#x8EAB;&#x5185;&#x7F6E;&#x4E86;&#x591A;&#x8FBE;125&#x79CD;&#x5E38;&#x89C1;&#x7684;&#x6EE4;&#x955C;&#x6548;&#x679C;&#x3002;</p>
+<p>LFLiveKit&#x5E93;&#x901A;&#x8FC7;pod&#x5BFC;&#x5165;&#x9879;&#x76EE;</p>
+<p>pod &apos;LFLiveKit&apos;</p>
+<p>&#x914D;&#x7F6E;&#x4E0A;&#x4F20;&#x5730;&#x5740;</p>
+<pre><code>let stream = LFLiveStreamInfo()
+stream.url = &quot;rtmp://192.168.***.***:1935/rtmplive/room&quot;
+session.startLive(stream)
+</code></pre><p>demo </p>
+<pre><code class="lang-bash">//
+//  ViewController.swift
+//  IfeiyvLiveVideo
+//
+//  Created by l on 2019/7/1.
+//  Copyright &#xA9; 2019 ifeiyv. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController, LFLiveSessionDelegate {
+
+override func <span class="hljs-function"><span class="hljs-title">viewDidLoad</span></span>() {
+super.viewDidLoad()
+// Do any additional setup after loading the view, typically from a nib.
+
+session.delegate = self
+session.preView = self.view
+
+self.requestAccessForVideo()
+self.requestAccessForAudio()
+self.view.backgroundColor = UIColor.clear
+self.view.addSubview(containerView)
+containerView.addSubview(stateLabel)
+containerView.addSubview(closeButton)
+containerView.addSubview(beautyButton)
+containerView.addSubview(cameraButton)
+containerView.addSubview(startLiveButton)
+
+cameraButton.addTarget(self, action: <span class="hljs-comment">#selector(didTappedCameraButton(_:)), for:.touchUpInside)</span>
+beautyButton.addTarget(self, action: <span class="hljs-comment">#selector(didTappedBeautyButton(_:)), for: .touchUpInside)</span>
+startLiveButton.addTarget(self, action: <span class="hljs-comment">#selector(didTappedStartLiveButton(_:)), for: .touchUpInside)</span>
+}
+
+override func <span class="hljs-function"><span class="hljs-title">didReceiveMemoryWarning</span></span>() {
+super.didReceiveMemoryWarning()
+// Dispose of any resources that can be recreated.
+}
+
+//MARK: AccessAuth
+
+func requestAccessForVideo() -&gt; Void {
+<span class="hljs-built_in">let</span> status = AVCaptureDevice.authorizationStatus(<span class="hljs-keyword">for</span>: AVMediaType.video);
+switch status  {
+// &#x8BB8;&#x53EF;&#x5BF9;&#x8BDD;&#x6CA1;&#x6709;&#x51FA;&#x73B0;&#xFF0C;&#x53D1;&#x8D77;&#x6388;&#x6743;&#x8BB8;&#x53EF;
+<span class="hljs-keyword">case</span> AVAuthorizationStatus.notDetermined:
+AVCaptureDevice.requestAccess(<span class="hljs-keyword">for</span>: AVMediaType.video, completionHandler: { (granted) <span class="hljs-keyword">in</span>
+<span class="hljs-keyword">if</span>(granted){
+DispatchQueue.main.async {
+self.session.running = <span class="hljs-literal">true</span>
+}
+}
+})
+<span class="hljs-built_in">break</span>;
+// &#x5DF2;&#x7ECF;&#x5F00;&#x542F;&#x6388;&#x6743;&#xFF0C;&#x53EF;&#x7EE7;&#x7EED;
+<span class="hljs-keyword">case</span> AVAuthorizationStatus.authorized:
+session.running = <span class="hljs-literal">true</span>;
+<span class="hljs-built_in">break</span>;
+// &#x7528;&#x6237;&#x660E;&#x786E;&#x5730;&#x62D2;&#x7EDD;&#x6388;&#x6743;&#xFF0C;&#x6216;&#x8005;&#x76F8;&#x673A;&#x8BBE;&#x5907;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;
+<span class="hljs-keyword">case</span> AVAuthorizationStatus.denied: <span class="hljs-built_in">break</span>
+<span class="hljs-keyword">case</span> AVAuthorizationStatus.restricted:<span class="hljs-built_in">break</span>;
+default:
+<span class="hljs-built_in">break</span>;
+}
+}
+
+func requestAccessForAudio() -&gt; Void {
+<span class="hljs-built_in">let</span> status = AVCaptureDevice.authorizationStatus(<span class="hljs-keyword">for</span>:AVMediaType.audio)
+switch status  {
+// &#x8BB8;&#x53EF;&#x5BF9;&#x8BDD;&#x6CA1;&#x6709;&#x51FA;&#x73B0;&#xFF0C;&#x53D1;&#x8D77;&#x6388;&#x6743;&#x8BB8;&#x53EF;
+<span class="hljs-keyword">case</span> AVAuthorizationStatus.notDetermined:
+AVCaptureDevice.requestAccess(<span class="hljs-keyword">for</span>: AVMediaType.audio, completionHandler: { (granted) <span class="hljs-keyword">in</span>
+
+})
+<span class="hljs-built_in">break</span>;
+// &#x5DF2;&#x7ECF;&#x5F00;&#x542F;&#x6388;&#x6743;&#xFF0C;&#x53EF;&#x7EE7;&#x7EED;
+<span class="hljs-keyword">case</span> AVAuthorizationStatus.authorized:
+<span class="hljs-built_in">break</span>;
+// &#x7528;&#x6237;&#x660E;&#x786E;&#x5730;&#x62D2;&#x7EDD;&#x6388;&#x6743;&#xFF0C;&#x6216;&#x8005;&#x76F8;&#x673A;&#x8BBE;&#x5907;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;
+<span class="hljs-keyword">case</span> AVAuthorizationStatus.denied: <span class="hljs-built_in">break</span>
+<span class="hljs-keyword">case</span> AVAuthorizationStatus.restricted:<span class="hljs-built_in">break</span>;
+default:
+<span class="hljs-built_in">break</span>;
+}
+}
+
+//MARK: - Callbacks
+
+// &#x56DE;&#x8C03;
+func liveSession(_ session: LFLiveSession?, debugInfo: LFLiveDebug?) {
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;debugInfo: \(debugInfo?.currentBandwidth)&quot;</span>)
+}
+
+func liveSession(_ session: LFLiveSession?, errorCode: LFLiveSocketErrorCode) {
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;errorCode: \(errorCode.rawValue)&quot;</span>)
+}
+
+func liveSession(_ session: LFLiveSession?, liveStateDidChange state: LFLiveState) {
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;liveStateDidChange: \(state.rawValue)&quot;</span>)
+switch state {
+<span class="hljs-keyword">case</span> LFLiveState.ready:
+stateLabel.text = <span class="hljs-string">&quot;&#x672A;&#x8FDE;&#x63A5;&quot;</span>
+<span class="hljs-built_in">break</span>;
+<span class="hljs-keyword">case</span> LFLiveState.pending:
+stateLabel.text = <span class="hljs-string">&quot;&#x8FDE;&#x63A5;&#x4E2D;&quot;</span>
+<span class="hljs-built_in">break</span>;
+<span class="hljs-keyword">case</span> LFLiveState.start:
+stateLabel.text = <span class="hljs-string">&quot;&#x5DF2;&#x8FDE;&#x63A5;&quot;</span>
+<span class="hljs-built_in">break</span>;
+<span class="hljs-keyword">case</span> LFLiveState.error:
+stateLabel.text = <span class="hljs-string">&quot;&#x8FDE;&#x63A5;&#x9519;&#x8BEF;&quot;</span>
+<span class="hljs-built_in">break</span>;
+<span class="hljs-keyword">case</span> LFLiveState.stop:
+stateLabel.text = <span class="hljs-string">&quot;&#x672A;&#x8FDE;&#x63A5;&quot;</span>
+<span class="hljs-built_in">break</span>;
+default:
+<span class="hljs-built_in">break</span>;
+}
+}
+
+//MARK: - Events
+
+// &#x5F00;&#x59CB;&#x76F4;&#x64AD;
+@objc func didTappedStartLiveButton(_ button: UIButton) -&gt; Void {
+startLiveButton.isSelected = !startLiveButton.isSelected;
+<span class="hljs-keyword">if</span> (startLiveButton.isSelected) {
+startLiveButton.setTitle(<span class="hljs-string">&quot;&#x7ED3;&#x675F;&#x76F4;&#x64AD;&quot;</span>, <span class="hljs-keyword">for</span>: UIControl.State())
+<span class="hljs-built_in">let</span> stream = LFLiveStreamInfo()
+stream.url = <span class="hljs-string">&quot;rtmp://192.168.1.148:1935/rtmplive/room&quot;</span>
+session.startLive(stream)
+} <span class="hljs-keyword">else</span> {
+startLiveButton.setTitle(<span class="hljs-string">&quot;&#x5F00;&#x59CB;&#x76F4;&#x64AD;&quot;</span>, <span class="hljs-keyword">for</span>: UIControl.State())
+session.stopLive()
+}
+}
+
+// &#x7F8E;&#x989C;
+@objc func didTappedBeautyButton(_ button: UIButton) -&gt; Void {
+session.beautyFace = !session.beautyFace;
+beautyButton.isSelected = !session.beautyFace
+}
+
+// &#x6444;&#x50CF;&#x5934;
+@objc func didTappedCameraButton(_ button: UIButton) -&gt; Void {
+<span class="hljs-built_in">let</span> devicePositon = session.captureDevicePosition;
+session.captureDevicePosition = (devicePositon == AVCaptureDevice.Position.back) ? AVCaptureDevice.Position.front : AVCaptureDevice.Position.back;
+}
+
+// &#x5173;&#x95ED;
+func didTappedCloseButton(_ button: UIButton) -&gt; Void  {
+
+}
+
+//MARK: - Getters and Setters
+
+//  &#x9ED8;&#x8BA4;&#x5206;&#x8FA8;&#x7387;368 &#xFF0A; 640  &#x97F3;&#x9891;&#xFF1A;44.1 iphone6&#x4EE5;&#x4E0A;48  &#x53CC;&#x58F0;&#x9053;  &#x65B9;&#x5411;&#x7AD6;&#x5C4F;
+var session: LFLiveSession = {
+<span class="hljs-built_in">let</span> audioConfiguration = LFLiveAudioConfiguration.defaultConfiguration(<span class="hljs-keyword">for</span>: LFLiveAudioQuality.high)
+<span class="hljs-built_in">let</span> videoConfiguration = LFLiveVideoConfiguration.defaultConfiguration(<span class="hljs-keyword">for</span>: LFLiveVideoQuality.low3)
+<span class="hljs-built_in">let</span> session = LFLiveSession(audioConfiguration: audioConfiguration, videoConfiguration: videoConfiguration)
+<span class="hljs-built_in">return</span> session!
+}()
+
+// &#x89C6;&#x56FE;
+var containerView: UIView = {
+<span class="hljs-built_in">let</span> containerView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+containerView.backgroundColor = UIColor.clear
+containerView.autoresizingMask = [UIView.AutoresizingMask.flexibleHeight, UIView.AutoresizingMask.flexibleHeight]
+<span class="hljs-built_in">return</span> containerView
+}()
+
+// &#x72B6;&#x6001;Label
+var stateLabel: UILabel = {
+<span class="hljs-built_in">let</span> stateLabel = UILabel(frame: CGRect(x: 20, y: 20, width: 80, height: 40))
+stateLabel.text = <span class="hljs-string">&quot;&#x672A;&#x8FDE;&#x63A5;&quot;</span>
+stateLabel.textColor = UIColor.white
+stateLabel.font = UIFont.systemFont(ofSize: 14)
+<span class="hljs-built_in">return</span> stateLabel
+}()
+
+// &#x5173;&#x95ED;&#x6309;&#x94AE;
+var closeButton: UIButton = {
+<span class="hljs-built_in">let</span> closeButton = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 10 - 44, y: 20, width: 44, height: 44))
+closeButton.setImage(UIImage(named: <span class="hljs-string">&quot;close_preview&quot;</span>), <span class="hljs-keyword">for</span>: UIControl.State())
+<span class="hljs-built_in">return</span> closeButton
+}()
+
+// &#x6444;&#x50CF;&#x5934;
+var cameraButton: UIButton = {
+<span class="hljs-built_in">let</span> cameraButton = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 54 * 2, y: 20, width: 44, height: 44))
+cameraButton.setImage(UIImage(named: <span class="hljs-string">&quot;camra_preview&quot;</span>), <span class="hljs-keyword">for</span>: UIControl.State())
+<span class="hljs-built_in">return</span> cameraButton
+}()
+
+// &#x6444;&#x50CF;&#x5934;
+var beautyButton: UIButton = {
+<span class="hljs-built_in">let</span> beautyButton = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 54 * 3, y: 20, width: 44, height: 44))
+beautyButton.setImage(UIImage(named: <span class="hljs-string">&quot;camra_beauty&quot;</span>), <span class="hljs-keyword">for</span>: UIControl.State.selected)
+beautyButton.setImage(UIImage(named: <span class="hljs-string">&quot;camra_beauty_close&quot;</span>), <span class="hljs-keyword">for</span>: UIControl.State())
+<span class="hljs-built_in">return</span> beautyButton
+}()
+
+// &#x5F00;&#x59CB;&#x76F4;&#x64AD;&#x6309;&#x94AE;
+var startLiveButton: UIButton = {
+<span class="hljs-built_in">let</span> startLiveButton = UIButton(frame: CGRect(x: 30, y: UIScreen.main.bounds.height - 50, width: UIScreen.main.bounds.width - 10 - 44, height: 44))
+startLiveButton.layer.cornerRadius = 22
+startLiveButton.setTitleColor(UIColor.black, <span class="hljs-keyword">for</span>:UIControl.State())
+startLiveButton.setTitle(<span class="hljs-string">&quot;&#x5F00;&#x59CB;&#x76F4;&#x64AD;&quot;</span>, <span class="hljs-keyword">for</span>: UIControl.State())
+startLiveButton.titleLabel!.font = UIFont.systemFont(ofSize: 14)
+startLiveButton.backgroundColor = UIColor(red: 50/255.0, green: 32/255.0, blue: 245/255.0, alpha: 1)//colorLiteralRed: 50, green: 32, blue: 245, alpha: 1
+<span class="hljs-built_in">return</span> startLiveButton
+}()
+}
+//
+//  ViewController.swift
+//  IfeiyvLiveVideo
+//
+//  Created by l on 2019/7/1.
+//  Copyright &#xA9; 2019 ifeiyv. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController, LFLiveSessionDelegate {
+
+override func <span class="hljs-function"><span class="hljs-title">viewDidLoad</span></span>() {
+super.viewDidLoad()
+// Do any additional setup after loading the view, typically from a nib.
+
+session.delegate = self
+session.preView = self.view
+
+self.requestAccessForVideo()
+self.requestAccessForAudio()
+self.view.backgroundColor = UIColor.clear
+self.view.addSubview(containerView)
+containerView.addSubview(stateLabel)
+containerView.addSubview(closeButton)
+containerView.addSubview(beautyButton)
+containerView.addSubview(cameraButton)
+containerView.addSubview(startLiveButton)
+
+cameraButton.addTarget(self, action: <span class="hljs-comment">#selector(didTappedCameraButton(_:)), for:.touchUpInside)</span>
+beautyButton.addTarget(self, action: <span class="hljs-comment">#selector(didTappedBeautyButton(_:)), for: .touchUpInside)</span>
+startLiveButton.addTarget(self, action: <span class="hljs-comment">#selector(didTappedStartLiveButton(_:)), for: .touchUpInside)</span>
+}
+
+override func <span class="hljs-function"><span class="hljs-title">didReceiveMemoryWarning</span></span>() {
+super.didReceiveMemoryWarning()
+// Dispose of any resources that can be recreated.
+}
+
+//MARK: AccessAuth
+
+func requestAccessForVideo() -&gt; Void {
+<span class="hljs-built_in">let</span> status = AVCaptureDevice.authorizationStatus(<span class="hljs-keyword">for</span>: AVMediaType.video);
+switch status  {
+// &#x8BB8;&#x53EF;&#x5BF9;&#x8BDD;&#x6CA1;&#x6709;&#x51FA;&#x73B0;&#xFF0C;&#x53D1;&#x8D77;&#x6388;&#x6743;&#x8BB8;&#x53EF;
+<span class="hljs-keyword">case</span> AVAuthorizationStatus.notDetermined:
+AVCaptureDevice.requestAccess(<span class="hljs-keyword">for</span>: AVMediaType.video, completionHandler: { (granted) <span class="hljs-keyword">in</span>
+<span class="hljs-keyword">if</span>(granted){
+DispatchQueue.main.async {
+self.session.running = <span class="hljs-literal">true</span>
+}
+}
+})
+<span class="hljs-built_in">break</span>;
+// &#x5DF2;&#x7ECF;&#x5F00;&#x542F;&#x6388;&#x6743;&#xFF0C;&#x53EF;&#x7EE7;&#x7EED;
+<span class="hljs-keyword">case</span> AVAuthorizationStatus.authorized:
+session.running = <span class="hljs-literal">true</span>;
+<span class="hljs-built_in">break</span>;
+// &#x7528;&#x6237;&#x660E;&#x786E;&#x5730;&#x62D2;&#x7EDD;&#x6388;&#x6743;&#xFF0C;&#x6216;&#x8005;&#x76F8;&#x673A;&#x8BBE;&#x5907;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;
+<span class="hljs-keyword">case</span> AVAuthorizationStatus.denied: <span class="hljs-built_in">break</span>
+<span class="hljs-keyword">case</span> AVAuthorizationStatus.restricted:<span class="hljs-built_in">break</span>;
+default:
+<span class="hljs-built_in">break</span>;
+}
+}
+
+func requestAccessForAudio() -&gt; Void {
+<span class="hljs-built_in">let</span> status = AVCaptureDevice.authorizationStatus(<span class="hljs-keyword">for</span>:AVMediaType.audio)
+switch status  {
+// &#x8BB8;&#x53EF;&#x5BF9;&#x8BDD;&#x6CA1;&#x6709;&#x51FA;&#x73B0;&#xFF0C;&#x53D1;&#x8D77;&#x6388;&#x6743;&#x8BB8;&#x53EF;
+<span class="hljs-keyword">case</span> AVAuthorizationStatus.notDetermined:
+AVCaptureDevice.requestAccess(<span class="hljs-keyword">for</span>: AVMediaType.audio, completionHandler: { (granted) <span class="hljs-keyword">in</span>
+
+})
+<span class="hljs-built_in">break</span>;
+// &#x5DF2;&#x7ECF;&#x5F00;&#x542F;&#x6388;&#x6743;&#xFF0C;&#x53EF;&#x7EE7;&#x7EED;
+<span class="hljs-keyword">case</span> AVAuthorizationStatus.authorized:
+<span class="hljs-built_in">break</span>;
+// &#x7528;&#x6237;&#x660E;&#x786E;&#x5730;&#x62D2;&#x7EDD;&#x6388;&#x6743;&#xFF0C;&#x6216;&#x8005;&#x76F8;&#x673A;&#x8BBE;&#x5907;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;
+<span class="hljs-keyword">case</span> AVAuthorizationStatus.denied: <span class="hljs-built_in">break</span>
+<span class="hljs-keyword">case</span> AVAuthorizationStatus.restricted:<span class="hljs-built_in">break</span>;
+default:
+<span class="hljs-built_in">break</span>;
+}
+}
+
+//MARK: - Callbacks
+
+// &#x56DE;&#x8C03;
+func liveSession(_ session: LFLiveSession?, debugInfo: LFLiveDebug?) {
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;debugInfo: \(debugInfo?.currentBandwidth)&quot;</span>)
+}
+
+func liveSession(_ session: LFLiveSession?, errorCode: LFLiveSocketErrorCode) {
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;errorCode: \(errorCode.rawValue)&quot;</span>)
+}
+
+func liveSession(_ session: LFLiveSession?, liveStateDidChange state: LFLiveState) {
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;liveStateDidChange: \(state.rawValue)&quot;</span>)
+switch state {
+<span class="hljs-keyword">case</span> LFLiveState.ready:
+stateLabel.text = <span class="hljs-string">&quot;&#x672A;&#x8FDE;&#x63A5;&quot;</span>
+<span class="hljs-built_in">break</span>;
+<span class="hljs-keyword">case</span> LFLiveState.pending:
+stateLabel.text = <span class="hljs-string">&quot;&#x8FDE;&#x63A5;&#x4E2D;&quot;</span>
+<span class="hljs-built_in">break</span>;
+<span class="hljs-keyword">case</span> LFLiveState.start:
+stateLabel.text = <span class="hljs-string">&quot;&#x5DF2;&#x8FDE;&#x63A5;&quot;</span>
+<span class="hljs-built_in">break</span>;
+<span class="hljs-keyword">case</span> LFLiveState.error:
+stateLabel.text = <span class="hljs-string">&quot;&#x8FDE;&#x63A5;&#x9519;&#x8BEF;&quot;</span>
+<span class="hljs-built_in">break</span>;
+<span class="hljs-keyword">case</span> LFLiveState.stop:
+stateLabel.text = <span class="hljs-string">&quot;&#x672A;&#x8FDE;&#x63A5;&quot;</span>
+<span class="hljs-built_in">break</span>;
+default:
+<span class="hljs-built_in">break</span>;
+}
+}
+
+//MARK: - Events
+
+// &#x5F00;&#x59CB;&#x76F4;&#x64AD;
+@objc func didTappedStartLiveButton(_ button: UIButton) -&gt; Void {
+startLiveButton.isSelected = !startLiveButton.isSelected;
+<span class="hljs-keyword">if</span> (startLiveButton.isSelected) {
+startLiveButton.setTitle(<span class="hljs-string">&quot;&#x7ED3;&#x675F;&#x76F4;&#x64AD;&quot;</span>, <span class="hljs-keyword">for</span>: UIControl.State())
+<span class="hljs-built_in">let</span> stream = LFLiveStreamInfo()
+stream.url = <span class="hljs-string">&quot;rtmp://192.168.1.148:1935/rtmplive/room&quot;</span>
+session.startLive(stream)
+} <span class="hljs-keyword">else</span> {
+startLiveButton.setTitle(<span class="hljs-string">&quot;&#x5F00;&#x59CB;&#x76F4;&#x64AD;&quot;</span>, <span class="hljs-keyword">for</span>: UIControl.State())
+session.stopLive()
+}
+}
+
+// &#x7F8E;&#x989C;
+@objc func didTappedBeautyButton(_ button: UIButton) -&gt; Void {
+session.beautyFace = !session.beautyFace;
+beautyButton.isSelected = !session.beautyFace
+}
+
+// &#x6444;&#x50CF;&#x5934;
+@objc func didTappedCameraButton(_ button: UIButton) -&gt; Void {
+<span class="hljs-built_in">let</span> devicePositon = session.captureDevicePosition;
+session.captureDevicePosition = (devicePositon == AVCaptureDevice.Position.back) ? AVCaptureDevice.Position.front : AVCaptureDevice.Position.back;
+}
+
+// &#x5173;&#x95ED;
+func didTappedCloseButton(_ button: UIButton) -&gt; Void  {
+
+}
+
+//MARK: - Getters and Setters
+
+//  &#x9ED8;&#x8BA4;&#x5206;&#x8FA8;&#x7387;368 &#xFF0A; 640  &#x97F3;&#x9891;&#xFF1A;44.1 iphone6&#x4EE5;&#x4E0A;48  &#x53CC;&#x58F0;&#x9053;  &#x65B9;&#x5411;&#x7AD6;&#x5C4F;
+var session: LFLiveSession = {
+<span class="hljs-built_in">let</span> audioConfiguration = LFLiveAudioConfiguration.defaultConfiguration(<span class="hljs-keyword">for</span>: LFLiveAudioQuality.high)
+<span class="hljs-built_in">let</span> videoConfiguration = LFLiveVideoConfiguration.defaultConfiguration(<span class="hljs-keyword">for</span>: LFLiveVideoQuality.low3)
+<span class="hljs-built_in">let</span> session = LFLiveSession(audioConfiguration: audioConfiguration, videoConfiguration: videoConfiguration)
+<span class="hljs-built_in">return</span> session!
+}()
+
+// &#x89C6;&#x56FE;
+var containerView: UIView = {
+<span class="hljs-built_in">let</span> containerView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+containerView.backgroundColor = UIColor.clear
+containerView.autoresizingMask = [UIView.AutoresizingMask.flexibleHeight, UIView.AutoresizingMask.flexibleHeight]
+<span class="hljs-built_in">return</span> containerView
+}()
+
+// &#x72B6;&#x6001;Label
+var stateLabel: UILabel = {
+<span class="hljs-built_in">let</span> stateLabel = UILabel(frame: CGRect(x: 20, y: 20, width: 80, height: 40))
+stateLabel.text = <span class="hljs-string">&quot;&#x672A;&#x8FDE;&#x63A5;&quot;</span>
+stateLabel.textColor = UIColor.white
+stateLabel.font = UIFont.systemFont(ofSize: 14)
+<span class="hljs-built_in">return</span> stateLabel
+}()
+
+// &#x5173;&#x95ED;&#x6309;&#x94AE;
+var closeButton: UIButton = {
+<span class="hljs-built_in">let</span> closeButton = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 10 - 44, y: 20, width: 44, height: 44))
+closeButton.setImage(UIImage(named: <span class="hljs-string">&quot;close_preview&quot;</span>), <span class="hljs-keyword">for</span>: UIControl.State())
+<span class="hljs-built_in">return</span> closeButton
+}()
+
+// &#x6444;&#x50CF;&#x5934;
+var cameraButton: UIButton = {
+<span class="hljs-built_in">let</span> cameraButton = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 54 * 2, y: 20, width: 44, height: 44))
+cameraButton.setImage(UIImage(named: <span class="hljs-string">&quot;camra_preview&quot;</span>), <span class="hljs-keyword">for</span>: UIControl.State())
+<span class="hljs-built_in">return</span> cameraButton
+}()
+
+// &#x6444;&#x50CF;&#x5934;
+var beautyButton: UIButton = {
+<span class="hljs-built_in">let</span> beautyButton = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 54 * 3, y: 20, width: 44, height: 44))
+beautyButton.setImage(UIImage(named: <span class="hljs-string">&quot;camra_beauty&quot;</span>), <span class="hljs-keyword">for</span>: UIControl.State.selected)
+beautyButton.setImage(UIImage(named: <span class="hljs-string">&quot;camra_beauty_close&quot;</span>), <span class="hljs-keyword">for</span>: UIControl.State())
+<span class="hljs-built_in">return</span> beautyButton
+}()
+
+// &#x5F00;&#x59CB;&#x76F4;&#x64AD;&#x6309;&#x94AE;
+var startLiveButton: UIButton = {
+<span class="hljs-built_in">let</span> startLiveButton = UIButton(frame: CGRect(x: 30, y: UIScreen.main.bounds.height - 50, width: UIScreen.main.bounds.width - 10 - 44, height: 44))
+startLiveButton.layer.cornerRadius = 22
+startLiveButton.setTitleColor(UIColor.black, <span class="hljs-keyword">for</span>:UIControl.State())
+startLiveButton.setTitle(<span class="hljs-string">&quot;&#x5F00;&#x59CB;&#x76F4;&#x64AD;&quot;</span>, <span class="hljs-keyword">for</span>: UIControl.State())
+startLiveButton.titleLabel!.font = UIFont.systemFont(ofSize: 14)
+startLiveButton.backgroundColor = UIColor(red: 50/255.0, green: 32/255.0, blue: 245/255.0, alpha: 1)//colorLiteralRed: 50, green: 32, blue: 245, alpha: 1
+<span class="hljs-built_in">return</span> startLiveButton
+}()
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="rtmp.html" class="navigation navigation-prev " aria-label="Previous page: 1.1  创建本地rtmp服务器">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="IJKPlayer.html" class="navigation navigation-next " aria-label="Next page: 1.3 IJKPlayer拉流">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.2 LFLiveKit推流","level":"1.3.2","depth":2,"next":{"title":"1.3 IJKPlayer拉流","level":"1.3.3","depth":2,"path":"LV/IJKPlayer.md","ref":"LV/IJKPlayer.md","articles":[]},"previous":{"title":"1.1  创建本地rtmp服务器","level":"1.3.1","depth":2,"path":"LV/rtmp.md","ref":"LV/rtmp.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"LV/LFLiveKit.md","mtime":"2019-07-02T09:34:28.878Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-02T09:35:54.925Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
